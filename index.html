@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Riviru Guruge | Video Editor and Animator</title>
-<meta name="description" content="Riviru Guruge is a freelance video editor and animator from Sri Lanka: editing, colour grading, motion graphics and sound design for clients worldwide since 2019.">
+<title>Riviru Guruge | Video Editor &amp; Motion Designer</title>
+<meta name="description" content="Riviru Guruge is a video editor and motion designer from Kandy, Sri Lanka. Reels, ads, YouTube, music videos and weddings for clients worldwide, with a 5.0-star rating.">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400..700&family=Instrument+Serif:ital@1&family=Geist:wght@400..600&family=Geist+Mono:wght@400..500&display=swap">
 <style>
 /* Layout concept: the portfolio is presented as a product page in Riviru's own reel palette
@@ -495,6 +495,77 @@ footer { padding-block: 36px 48px; }
 .palette-foot { display: flex; gap: 16px; padding: 10px 16px; border-top: 1px solid var(--line); font-size: var(--t-xs); color: var(--fg-faint); }
 .palette-foot span { display: inline-flex; align-items: center; gap: 6px; }
 
+/* ---------- v3: hero portrait, service grid, agencies, experience side ---------- */
+h1 { font-size: clamp(2.4rem, 1.1rem + 4.4vw, 4.1rem); }
+.hero-grid { display: grid; gap: 48px; grid-template-columns: minmax(0, 1fr); align-items: center; }
+.role { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 16px; font-family: var(--font-mono); font-size: var(--t-sm); letter-spacing: 0.06em; text-transform: uppercase; color: var(--fg-muted); }
+.role .serif { font-size: 1.5rem; text-transform: none; color: var(--accent-text); line-height: 1; }
+.portrait { position: relative; width: min(70%, 340px); aspect-ratio: 1; margin-inline: auto; }
+.portrait::before { content: ""; position: absolute; inset: -12%; z-index: -1; border-radius: 50%; background: radial-gradient(circle, var(--glow-a), transparent 68%); filter: blur(30px); opacity: 0.8; }
+.portrait-ring { position: absolute; inset: 0; border-radius: 50%; padding: 5px; background: conic-gradient(from 210deg, var(--accent), var(--accent-2), var(--accent-text), var(--accent)); }
+.portrait-ring img { display: block; width: 100%; height: 100%; border-radius: 50%; object-fit: cover; border: 6px solid var(--bg); background: var(--surface-2); }
+.chip { position: absolute; display: inline-flex; align-items: center; gap: 6px; padding: 8px 12px; border-radius: 12px; border: 1px solid var(--line-strong); background: color-mix(in srgb, var(--bg-raised) 90%, transparent); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); box-shadow: 0 12px 30px -14px rgba(0, 0, 0, 0.6); font-size: var(--t-xs); color: var(--fg-muted); white-space: nowrap; }
+.chip b { color: var(--fg); font-weight: 600; }
+.chip-1 { top: 4%; left: -14%; }
+.chip-2 { top: 44%; right: -16%; }
+.chip-3 { bottom: -3%; left: 50%; transform: translateX(-50%); }
+@media (min-width: 980px) {
+  .hero-grid { grid-template-columns: minmax(0, 1.55fr) minmax(0, 0.85fr); gap: 56px; }
+  .portrait { width: min(100%, 310px); }
+  .chip-1 { left: -10%; }
+  .chip-2 { right: -8%; }
+}
+@media (max-width: 520px) { .portrait { width: 62%; } .chip { font-size: 0.6875rem; padding: 6px 10px; } }
+
+.sub-head { margin: clamp(48px, 6vw, 72px) 0 20px; font-family: var(--font-mono); font-size: var(--t-xs); font-weight: 400; letter-spacing: 0.09em; text-transform: uppercase; color: var(--fg-faint); display: flex; align-items: center; gap: 16px; }
+.sub-head::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+.svc-grid { display: grid; grid-template-columns: minmax(0, 1fr); border-top: 1px solid var(--line-strong); }
+.svc { display: grid; gap: 8px; align-content: start; padding: 26px 0; border-bottom: 1px solid var(--line); transition: background-color 0.2s ease; }
+.svc p { color: var(--fg-muted); font-size: 0.9375rem; max-width: 40ch; }
+.svc-tag { font-family: var(--font-mono); font-size: 0.6875rem; letter-spacing: 0.04em; color: var(--accent-text); }
+@media (min-width: 720px) {
+  .svc-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .svc { padding: 28px 28px 28px 0; }
+  .svc:nth-child(even) { padding-left: 28px; border-left: 1px solid var(--line); }
+}
+@media (min-width: 1000px) {
+  .svc-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .svc, .svc:nth-child(even) { padding: 30px 28px; border-left: 1px solid var(--line); }
+  .svc:nth-child(3n+1) { padding-left: 0; border-left: 0; }
+}
+
+.why-grid { display: grid; gap: 14px; grid-template-columns: minmax(0, 1fr); }
+.why { display: grid; gap: 8px; align-content: start; padding: clamp(20px, 2.4vw, 26px); border: 1px solid var(--line); border-radius: var(--r-lg); background: var(--bg); min-width: 0; }
+.why p { color: var(--fg-muted); font-size: 0.9375rem; }
+.why-wide { gap: 20px; }
+.why-wide > div:first-child { display: grid; gap: 8px; }
+.ratios { display: flex; align-items: flex-end; gap: 18px; }
+.ratio { display: grid; gap: 4px; justify-items: start; font-size: var(--t-xs); color: var(--fg-faint); }
+.ratio i { display: block; width: 54px; border-radius: 6px; border: 1px solid var(--accent-text); background: var(--accent-soft); }
+.ratio b { font-family: var(--font-mono); font-weight: 500; color: var(--fg); margin-top: 4px; }
+@media (min-width: 720px) { .why-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1000px) {
+  .why-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .why-wide { grid-row: span 2; align-content: space-between; }
+  .why-wide .ratio i { width: 64px; }
+}
+.placements { margin-top: 14px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px 48px; padding: clamp(20px, 2.4vw, 28px); border: 1px solid var(--line); border-radius: var(--r-lg); background: var(--bg); }
+.placements-copy { display: grid; gap: 8px; max-width: 44ch; }
+.placements-copy p { color: var(--fg-muted); font-size: 0.9375rem; }
+.edit-list { margin-top: 32px; display: grid; gap: 12px; }
+
+.exp-grid { display: grid; gap: 40px; grid-template-columns: minmax(0, 1fr); align-items: start; }
+.exp-grid .entry { grid-template-columns: minmax(0, 1fr); }
+.side { display: grid; gap: 14px; }
+.panel { display: grid; gap: 14px; padding: 22px; border: 1px solid var(--line); border-radius: var(--r-lg); background: var(--bg); }
+.panel-title { font-family: var(--font-mono); font-size: var(--t-xs); font-weight: 400; letter-spacing: 0.09em; text-transform: uppercase; color: var(--accent-text); }
+.kv { display: grid; gap: 12px; }
+.kv li { display: grid; gap: 1px; }
+.kv b { font-weight: 500; font-size: 0.9375rem; }
+.kv span { font-size: var(--t-sm); color: var(--fg-muted); }
+@media (min-width: 720px) { .exp-grid .entry { grid-template-columns: 150px minmax(0, 1fr); } }
+@media (min-width: 1000px) { .exp-grid { grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr); gap: 56px; } }
+
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 
 /* load sequence: starts from a visible state, settles in 0.6s */
@@ -509,9 +580,9 @@ footer { padding-block: 36px 48px; }
 }
 </style>
 
-<meta property="og:title" content="Riviru Guruge | Video Editor and Animator">
-<meta property="og:description" content="Editing, colour grading, motion graphics and sound design for clients worldwide since 2019.">
-<meta property="og:image" content="assets/poster.jpg">
+<meta property="og:title" content="Riviru Guruge | Video Editor &amp; Motion Designer">
+<meta property="og:description" content="I turn raw footage into videos people watch to the end. Reels, ads, YouTube, music videos and weddings.">
+<meta property="og:image" content="https://rivi9058-boop.github.io/assets/poster.jpg">
 <meta property="og:type" content="website">
 <link rel="icon" href="assets/avatar.jpg">
 </head>
@@ -525,6 +596,7 @@ footer { padding-block: 36px 48px; }
     <nav class="nav-links" aria-label="Sections">
       <a href="#reel">Reel</a>
       <a href="#services">Services</a>
+      <a href="#agencies">Agencies</a>
       <a href="#process">Process</a>
       <a href="#experience">Experience</a>
       <a href="#contact">Contact</a>
@@ -534,7 +606,7 @@ footer { padding-block: 36px 48px; }
         <span class="label-wide">Jump to</span><span class="label-narrow">Menu</span>
         <kbd id="kbd-hint">Ctrl K</kbd>
       </button>
-      <a class="btn btn-primary btn-sm nav-cta ext" href="https://www.fiverr.com/riviru_z_guruge" target="_blank" rel="noopener">Hire me on Fiverr</a>
+      <a class="btn btn-primary btn-sm nav-cta ext" href="https://wa.me/94710522506" target="_blank" rel="noopener">WhatsApp me</a>
     </div>
   </div>
 </header>
@@ -542,16 +614,25 @@ footer { padding-block: 36px 48px; }
 <main id="top">
   <section class="hero">
     <div class="wrap">
-      <div class="hero-copy">
-        <div class="rise"><span class="status"><i class="status-dot" aria-hidden="true"></i><span><b>Online</b> · replies fast</span></span></div>
-        <p class="tagline serif rise">Thoughts to Reality.</p>
-        <h1 class="rise rise-2">Video editing that turns raw footage into something people <span class="grad">finish watching.</span></h1>
-        <p class="lead rise rise-3">I'm Riviru Guruge, a video editor and animator from Sri Lanka. Since 2019 I've cut weddings, music videos, commercials and YouTube content for clients worldwide. I know what works on each platform and edit to match it.</p>
-        <div class="hero-actions rise rise-3">
-          <a class="btn btn-primary ext" href="https://www.fiverr.com/riviru_z_guruge" target="_blank" rel="noopener">Hire me on Fiverr</a>
-          <a class="btn btn-ghost" href="#reel">Watch the 27-second reel</a>
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="rise"><span class="status"><i class="status-dot" aria-hidden="true"></i><span><b>Available</b> for monthly retainers and one-off projects</span></span></div>
+          <p class="role rise">Video Editor &amp; Motion Designer <span class="serif">Thoughts to Reality.</span></p>
+          <h1 class="rise rise-2">I turn raw footage into videos people <span class="grad">watch to the end.</span></h1>
+          <p class="lead rise rise-3">I'm Riviru Guruge. For 6+ years I've edited YouTube videos, short-form reels, ads, music videos and weddings for clients worldwide. You send the footage and a short brief. You get back a polished, platform-ready edit, on time.</p>
+          <div class="hero-actions rise rise-3">
+            <a class="btn btn-primary ext" href="https://wa.me/94710522506" target="_blank" rel="noopener">Send a brief on WhatsApp</a>
+            <a class="btn btn-ghost ext" href="https://www.fiverr.com/riviru_z_guruge" target="_blank" rel="noopener">Hire me on Fiverr</a>
+            <a class="btn btn-ghost" href="#reel">Watch the reel</a>
+          </div>
+          <p class="hero-proof rise rise-3"><span><span class="stars" aria-hidden="true">★★★★★</span> <b>5.0</b> client rating</span><span>Premiere Pro · After Effects · DaVinci Resolve</span></p>
         </div>
-        <p class="hero-proof rise rise-3"><span><span class="stars" aria-hidden="true">★★★★★</span> <b>5.0</b> from Fiverr clients</span><span>Premiere Pro · After Effects · DaVinci Resolve</span></p>
+        <div class="portrait rise rise-2">
+          <div class="portrait-ring"><img src="assets/portrait.jpg" alt="Riviru Guruge at his editing desk" width="600" height="600"></div>
+          <span class="chip chip-1"><span class="stars" aria-hidden="true">★</span> <b>5.0</b> client rating</span>
+          <span class="chip chip-2"><b>24–48 h</b> first cut on reels</span>
+          <span class="chip chip-3">Sinhala · English · Singlish captions</span>
+        </div>
       </div>
 
       <div class="app-wrap" id="reel">
@@ -593,16 +674,17 @@ footer { padding-block: 36px 48px; }
       <div class="proof">
         <p class="proof-label">Edited, graded and animated in</p>
         <div class="tool-row">
-          <span class="tool"><i aria-hidden="true"></i>Premiere Pro <small>editing</small></span>
-          <span class="tool"><i aria-hidden="true"></i>After Effects <small>motion</small></span>
+          <span class="tool"><i aria-hidden="true"></i>Premiere Pro <small>main editing · 6+ years</small></span>
           <span class="tool"><i aria-hidden="true"></i>DaVinci Resolve <small>colour</small></span>
-          <span class="tool"><i aria-hidden="true"></i>Photoshop <small>graphics</small></span>
+          <span class="tool"><i aria-hidden="true"></i>After Effects <small>motion</small></span>
+          <span class="tool"><i aria-hidden="true"></i>Photoshop <small>thumbnails</small></span>
+          <span class="tool"><i aria-hidden="true"></i>CapCut <small>social</small></span>
         </div>
         <dl class="facts">
-          <div class="fact"><dt>star rating from Fiverr clients</dt><dd>5.0</dd></div>
-          <div class="fact"><dt>freelance editing for clients worldwide since</dt><dd>2019</dd></div>
-          <div class="fact"><dt>YouTube channels I produce, edit and publish</dt><dd>2</dd></div>
-          <div class="fact"><dt>views per video on my motivational channel</dt><dd>1,000+</dd></div>
+          <div class="fact"><dt>years editing for clients, since 2019</dt><dd>6+</dd></div>
+          <div class="fact"><dt>star client rating on Fiverr</dt><dd>5.0</dd></div>
+          <div class="fact"><dt>hours to a first cut on reels</dt><dd>24–48</dd></div>
+          <div class="fact"><dt>YouTube channels I plan, edit and publish</dt><dd>3</dd></div>
         </dl>
       </div>
     </div>
@@ -612,15 +694,25 @@ footer { padding-block: 36px 48px; }
     <div class="wrap">
       <div class="section-head">
         <p class="eyebrow">Services</p>
-        <h2>The cut, the colour, the motion and the sound, from one editor.</h2>
-        <p class="lead">One person handles the whole post-production pass, so the edit, the grade and the sound are built to work together.</p>
+        <h2>What I can do for you.</h2>
+        <p class="lead">Edits that hold attention and match your brand, delivered in the right format for each platform.</p>
       </div>
+      <div class="svc-grid">
+        <article class="svc"><span class="svc-tag">16:9 · long-form</span><h3>YouTube editing</h3><p>Retention-focused cuts, captions, B-roll and sound design. Podcasts too.</p></article>
+        <article class="svc"><span class="svc-tag">9:16 · Reels, Shorts, TikTok</span><h3>Short-form</h3><p>Hooks in the first 2 seconds, vertical framing and animated captions.</p></article>
+        <article class="svc"><span class="svc-tag">9:16 · 4:5 · 1:1</span><h3>Ads and brand promos</h3><p>A clear message, motion graphics, strong CTAs and a version for each platform.</p></article>
+        <article class="svc"><span class="svc-tag">beat-synced</span><h3>Music videos</h3><p>Cuts on the beat, effects and a cinematic grade.</p></article>
+        <article class="svc"><span class="svc-tag">highlight + full film</span><h3>Weddings and events</h3><p>Story-driven highlight films and full edits.</p></article>
+        <article class="svc"><span class="svc-tag">grade · titles · logos</span><h3>Colour grading and motion</h3><p>Cinematic grades, titles and logo animations.</p></article>
+      </div>
+
+      <h3 class="sub-head">Inside every edit</h3>
       <div class="bento">
         <article class="cell cell-a">
           <div class="cell-copy">
-            <h3>Video editing</h3>
-            <p>Clean storytelling and tight pacing, cut for where the video will live. Long-form and short-form, from a wedding film to a vertical short.</p>
-            <div class="tags" aria-label="Formats"><span class="tag">Weddings</span><span class="tag">Music videos</span><span class="tag">YouTube</span><span class="tag">Commercials</span><span class="tag">Short-form</span><span class="tag">Cinematic</span></div>
+            <h3>Storytelling and pacing</h3>
+            <p>I handle the full post-production pass: editing, colour, sound design, motion graphics and export. One editor, so every layer is built to work with the others.</p>
+            <div class="tags" aria-label="Skills"><span class="tag">Retention editing</span><span class="tag">Captions</span><span class="tag">B-roll</span><span class="tag">Sound design</span><span class="tag">Colour grading</span><span class="tag">Motion graphics</span></div>
           </div>
           <div class="cell-art mini-tl" aria-hidden="true">
             <div class="mini-row"><span>V3</span><div class="mini-lane"><i class="c-title" style="left:4%;width:14%"></i><i class="c-title" style="left:58%;width:11%"></i><i class="c-title" style="left:86%;width:12%"></i></div></div>
@@ -665,12 +757,12 @@ footer { padding-block: 36px 48px; }
         </article>
         <article class="cell cell-e">
           <div class="cell-copy">
-            <h3>Easy to work with</h3>
-            <p>Fast turnaround, clear updates and friendly communication. What clients rate on Fiverr:</p>
+            <h3>What clients highlight</h3>
+            <p>A 5.0-star rating across Fiverr reviews, for:</p>
           </div>
           <ul class="cell-art rated">
-            <li><span>Amazing editor</span><span class="stars" role="img" aria-label="5 stars">★★★★★</span></li>
-            <li><span>Great communication</span><span class="stars" role="img" aria-label="5 stars">★★★★★</span></li>
+            <li><span>Editing quality</span><span class="stars" role="img" aria-label="5 stars">★★★★★</span></li>
+            <li><span>Communication</span><span class="stars" role="img" aria-label="5 stars">★★★★★</span></li>
             <li><span>Customer satisfaction</span><span class="stars" role="img" aria-label="5 stars">★★★★★</span></li>
           </ul>
         </article>
@@ -678,82 +770,159 @@ footer { padding-block: 36px 48px; }
     </div>
   </section>
 
-  <section class="section band" id="process">
+  <section class="section band" id="agencies">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">For agencies and brands</p>
+        <h2>Why agencies work with me.</h2>
+        <p class="lead">I edit reels and ads for brands and agencies: on brief, on brand and ready to post, with Sinhala and English captions.</p>
+      </div>
+      <div class="why-grid">
+        <article class="why"><h3>Handles volume</h3><p>Monthly reel batches for several brands at once.</p></article>
+        <article class="why"><h3>Fast turnaround</h3><p>Reels in 24–48 hours. Ready for festive rushes like Avurudu and Christmas.</p></article>
+        <article class="why"><h3>Sinhala and English</h3><p>Sinhala, English and Singlish captions with clean Sinhala typography.</p></article>
+        <article class="why"><h3>Built for ads</h3><p>3-second hooks, clear CTAs and variations for A/B testing.</p></article>
+        <article class="why"><h3>Stays on brand</h3><p>Works from your brand kit and templates, so feeds stay consistent.</p></article>
+        <article class="why"><h3>Easy to work with</h3><p>Briefs on WhatsApp, files on Google Drive, quick replies during office hours.</p></article>
+      </div>
+      <div class="placements">
+        <div class="placements-copy"><h3>Every ad, cut for every placement</h3><p>One edit, delivered in each size your campaign needs, so nothing gets cropped by the platform.</p></div>
+        <div class="ratios" aria-label="Aspect ratios delivered">
+          <div class="ratio"><i style="aspect-ratio:9/16"></i><b>9:16</b><span>Reels, TikTok</span></div>
+          <div class="ratio"><i style="aspect-ratio:4/5"></i><b>4:5</b><span>Feed</span></div>
+          <div class="ratio"><i style="aspect-ratio:1/1"></i><b>1:1</b><span>Square</span></div>
+          <div class="ratio"><i style="aspect-ratio:16/9;width:112px"></i><b>16:9</b><span>YouTube</span></div>
+        </div>
+      </div>
+      <div class="edit-list">
+        <p class="proof-label">What I edit for agencies</p>
+        <div class="tags"><span class="tag">Reels, TikToks &amp; Shorts</span><span class="tag">Meta &amp; TikTok ads</span><span class="tag">Festive &amp; promo campaigns</span><span class="tag">Product &amp; UGC-style videos</span><span class="tag">YouTube videos &amp; podcasts</span><span class="tag">Motion graphics &amp; titles</span><span class="tag">Static posts &amp; thumbnails</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="process">
     <div class="wrap">
       <div class="section-head">
         <p class="eyebrow">Process</p>
-        <h2>From raw footage to a finished upload in four steps.</h2>
+        <h2>How we'd work.</h2>
+        <p class="lead">Fast turnaround, clear updates while I edit, and revisions until you're happy.</p>
       </div>
       <ol class="steps">
         <li class="step">
           <span class="step-when">Step 1</span>
           <h3>Brief</h3>
-          <p>Send the footage, a reference or two, and where the video will be published. We agree on scope and timing before I start.</p>
+          <p>You send the brief and footage on WhatsApp or Google Drive.</p>
         </li>
         <li class="step">
           <span class="step-when">Step 2</span>
           <h3>First cut</h3>
-          <p>Story and pacing come first. You get a watchable cut to react to before any polish goes on.</p>
+          <p>A first cut in 24–48 hours for reels, with updates along the way.</p>
         </li>
         <li class="step">
           <span class="step-when">Step 3</span>
-          <h3>Polish</h3>
-          <p>Colour grade, sound design, titles and motion graphics, shaped by your notes on the first cut.</p>
+          <h3>Revisions</h3>
+          <p>Quick revisions until it's approved.</p>
         </li>
         <li class="step">
           <span class="step-when">Step 4</span>
           <h3>Delivery</h3>
-          <p>Final exports sized for each platform you named, ready to upload.</p>
+          <p>Final files in every size you need, in the right format for each platform.</p>
         </li>
       </ol>
     </div>
   </section>
 
-  <section class="section" id="experience">
+  <section class="section band" id="experience">
     <div class="wrap">
       <div class="section-head">
         <p class="eyebrow">Experience</p>
-        <h2>Editing for clients since 2019, and for my own channels since 2025.</h2>
+        <h2>Freelance since 2019, agency-trained, and a creator myself.</h2>
       </div>
-      <div class="log">
-        <article class="entry">
-          <div class="entry-meta"><span class="ver">2025 – present</span></div>
-          <div class="entry-body">
-            <h3>YouTube content creator</h3>
-            <p class="entry-role">Two channels, including <a class="ext" href="https://www.youtube.com/@TheGrindset_RG" target="_blank" rel="noopener">The Grindset</a></p>
-            <ul class="entry-list">
-              <li>Produce, edit and publish every video for both channels, with a focus on high-retention storytelling, clean pacing and strong visuals.</li>
-              <li>Built a growing motivational channel that draws 1,000+ views per video.</li>
-              <li>Keep a consistent upload schedule and optimise each video for the platform.</li>
+      <div class="exp-grid">
+        <div class="log">
+          <article class="entry">
+            <div class="entry-meta"><span class="ver">2019 – present</span></div>
+            <div class="entry-body">
+              <h3>Freelance video editor</h3>
+              <p class="entry-role"><a class="ext" href="https://www.fiverr.com/riviru_z_guruge" target="_blank" rel="noopener">Fiverr</a> and direct clients worldwide, including an ongoing UK client</p>
+              <ul class="entry-list">
+                <li>Edit ads, reels, music videos, weddings and YouTube content for local and international clients.</li>
+                <li>Hold a 5.0-star rating. Clients highlight editing quality, communication and customer satisfaction.</li>
+                <li>Deliver on deadline while following each client's creative direction and brand style.</li>
+                <li>Handle the full post-production process: editing, colour, sound design, motion graphics and export.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="entry">
+            <div class="entry-meta"><span class="ver">2025 – present</span></div>
+            <div class="entry-body">
+              <h3>YouTube creator, 3 channels</h3>
+              <p class="entry-role"><a class="ext" href="https://www.youtube.com/@Astrid-t2c" target="_blank" rel="noopener">Astrid</a> · <a class="ext" href="https://www.youtube.com/@SilentRecoil_141" target="_blank" rel="noopener">Silent Recoil</a> · <a class="ext" href="https://www.youtube.com/@TheGrindset_RG" target="_blank" rel="noopener">The Grindset</a></p>
+              <ul class="entry-list">
+                <li>Plan, edit and publish every video, using the same retention techniques I use for clients.</li>
+                <li>Grew a motivational Shorts channel to a steady 1,000+ views per video.</li>
+                <li>Keep a regular upload schedule and optimise titles, thumbnails and pacing.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="entry">
+            <div class="entry-meta"><span class="ver">3 months</span></div>
+            <div class="entry-body">
+              <h3>Remote video editor, GrowthEngen</h3>
+              <p class="entry-role">Digital marketing agency</p>
+              <ul class="entry-list">
+                <li>Edited social media videos for the agency's client brands alongside full-time study.</li>
+                <li>Worked inside an agency workflow: briefs from the team, fast revisions, deadlines met remotely.</li>
+              </ul>
+            </div>
+          </article>
+          <article class="entry">
+            <div class="entry-meta"><span class="ver">Several months</span></div>
+            <div class="entry-body">
+              <h3>Bilingual demonstrator</h3>
+              <p class="entry-role">Wax Museum, Ehelepola Walauwwe</p>
+              <ul class="entry-list">
+                <li>Guided visitors in English and Sinhala, building strong people skills.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+        <aside class="side">
+          <div class="panel">
+            <h3 class="panel-title">Software</h3>
+            <ul class="kv">
+              <li><b>Adobe Premiere Pro</b><span>Main editing · 6+ years</span></li>
+              <li><b>DaVinci Resolve</b><span>Colour grading and editing</span></li>
+              <li><b>Adobe After Effects</b><span>Motion graphics and animation</span></li>
+              <li><b>Adobe Photoshop</b><span>Thumbnails and graphics</span></li>
+              <li><b>CapCut</b><span>Fast social edits</span></li>
             </ul>
           </div>
-        </article>
-        <article class="entry">
-          <div class="entry-meta"><span class="ver">2019 – present</span></div>
-          <div class="entry-body">
-            <h3>Freelance video editor</h3>
-            <p class="entry-role">Clients worldwide, via <a class="ext" href="https://www.fiverr.com/riviru_z_guruge" target="_blank" rel="noopener">Fiverr</a></p>
-            <ul class="entry-list">
-              <li>Edit weddings, music videos, commercials and YouTube content for clients around the world.</li>
-              <li>Hold a consistent 5-star rating through clear communication, reliability and accurate execution of each client's creative direction.</li>
+          <div class="panel">
+            <h3 class="panel-title">Skills</h3>
+            <div class="tags"><span class="tag">Storytelling &amp; pacing</span><span class="tag">Retention editing</span><span class="tag">Sound design</span><span class="tag">Colour grading</span><span class="tag">Motion graphics</span><span class="tag">Captions</span><span class="tag">Project management</span><span class="tag">Client communication</span></div>
+          </div>
+          <div class="panel">
+            <h3 class="panel-title">Education</h3>
+            <ul class="kv">
+              <li><b>BSc (Hons) Physical Science (ICT)</b><span>University of Sri Jayewardenepura · 2025 – present</span></li>
+              <li><b>GCE A/L, Science stream</b><span>Kingswood College, Kandy · 2022 – 2025</span></li>
             </ul>
           </div>
-        </article>
-        <article class="entry">
-          <div class="entry-meta"><span class="ver">Education</span></div>
-          <div class="entry-body">
-            <h3>BSc (Hons) Physical Science (ICT), undergraduate</h3>
-            <p class="entry-role">University of Sri Jayewardenepura</p>
-            <ul class="entry-list">
-              <li>Before that: Kingswood College, Kandy, Science stream.</li>
+          <div class="panel">
+            <h3 class="panel-title">Languages</h3>
+            <ul class="kv">
+              <li><b>Sinhala</b><span>Native</span></li>
+              <li><b>English</b><span>Fluent</span></li>
             </ul>
           </div>
-        </article>
+        </aside>
       </div>
     </div>
   </section>
 
-  <section class="section band" id="faq">
+  <section class="section" id="faq">
     <div class="wrap faq-grid">
       <div class="section-head">
         <p class="eyebrow">Questions</p>
@@ -761,20 +930,28 @@ footer { padding-block: 36px 48px; }
       </div>
       <div class="faq">
         <details open>
-          <summary>What kinds of video do you edit?</summary>
-          <p>Wedding films, music videos, commercials, YouTube videos and short-form content for social platforms. If your project sits somewhere in between, send it over and I'll tell you whether I'm the right fit.</p>
+          <summary>How fast do you deliver?</summary>
+          <p>Reels and short-form get a first cut in 24–48 hours. Longer projects get a delivery date agreed up front, and I send clear updates while I edit.</p>
         </details>
         <details>
-          <summary>Which software do you work in?</summary>
-          <p>Premiere Pro for editing, After Effects for motion graphics and animation, DaVinci Resolve for colour grading, and Photoshop for graphics.</p>
+          <summary>How many revisions do I get?</summary>
+          <p>I revise until it's approved. Quick rounds, based on your notes.</p>
         </details>
         <details>
-          <summary>Do you work with clients outside Sri Lanka?</summary>
-          <p>Yes. I've edited for clients around the world since 2019, working remotely. I speak English and Sinhala.</p>
+          <summary>Do you take monthly retainers?</summary>
+          <p>Yes. I'm available for monthly retainers and one-off projects, including monthly reel batches for several brands at once.</p>
+        </details>
+        <details>
+          <summary>Which formats and captions do you deliver?</summary>
+          <p>9:16, 4:5, 1:1 and 16:9, exported in the right format for each platform. Captions in Sinhala, English or Singlish.</p>
+        </details>
+        <details>
+          <summary>Where are you based, and when are you online?</summary>
+          <p>Kandy, Sri Lanka (GMT+5:30), working remotely with visits to Colombo. I cover US, EU and Australian working hours for international clients.</p>
         </details>
         <details>
           <summary>How do I book you?</summary>
-          <p>Message me or place an order through my <a class="ext" href="https://www.fiverr.com/riviru_z_guruge" target="_blank" rel="noopener">Fiverr profile</a>, where you can also read client reviews.</p>
+          <p>Send a brief on <a class="ext" href="https://wa.me/94710522506" target="_blank" rel="noopener">WhatsApp</a> for a reply the same day, or order through my <a class="ext" href="https://www.fiverr.com/riviru_z_guruge" target="_blank" rel="noopener">Fiverr profile</a>, where you can also read client reviews.</p>
         </details>
       </div>
     </div>
@@ -785,19 +962,19 @@ footer { padding-block: 36px 48px; }
       <div class="contact">
         <div class="contact-who">
           <img class="avatar-img" src="assets/avatar.jpg" alt="Riviru Guruge" width="56" height="56" loading="lazy">
-          <div><b>Riviru Guruge</b><span><i class="status-dot" aria-hidden="true"></i>Online · replies fast</span></div>
+          <div><b>Riviru Guruge</b><span><i class="status-dot" aria-hidden="true"></i>Send a brief, get a reply today</span></div>
         </div>
         <h2>Let's make your next video.</h2>
-        <p class="lead">Tell me what you're making and where it will be published. Message me on Fiverr before you order and I'll reply with how I'd approach it.</p>
+        <p class="lead">Tell me what you're making and where it will be published. I'm available for monthly retainers and one-off projects.</p>
         <div class="handle-row">
-          <span class="handle" id="handle">@riviru_z_guruge</span>
-          <button class="btn btn-ghost" type="button" id="copy-handle">Copy Fiverr handle</button>
+          <span class="handle">WhatsApp +94 71 052 2506</span>
         </div>
         <div class="contact-links">
-          <a class="btn btn-primary ext" href="https://www.fiverr.com/riviru_z_guruge" target="_blank" rel="noopener">Hire me on Fiverr</a>
-          <a class="btn btn-ghost ext" href="https://www.youtube.com/@TheGrindset_RG" target="_blank" rel="noopener">The Grindset on YouTube</a>
+          <a class="btn btn-primary ext" href="https://wa.me/94710522506" target="_blank" rel="noopener">Message me on WhatsApp</a>
+          <a class="btn btn-ghost ext" href="https://www.fiverr.com/riviru_z_guruge" target="_blank" rel="noopener">Hire me on Fiverr</a>
+          <a class="btn btn-ghost ext" href="https://www.youtube.com/@Astrid-t2c" target="_blank" rel="noopener">Astrid on YouTube</a>
         </div>
-        <p class="contact-meta">Sri Lanka · English, Sinhala</p>
+        <p class="contact-meta">Kandy, Sri Lanka · GMT+5:30 · works US, EU and AU hours · Sinhala and English</p>
       </div>
     </div>
   </section>
@@ -805,7 +982,7 @@ footer { padding-block: 36px 48px; }
 
 <footer>
   <div class="wrap foot">
-    <p>© 2026 Riviru Guruge. Video editor and animator.</p>
+    <p>© 2026 Riviru Guruge. Video editor and motion designer.</p>
     <p class="serif">Thoughts to Reality.</p>
   </div>
 </footer>
@@ -945,20 +1122,6 @@ footer { padding-block: 36px 48px; }
     });
   });
 
-  /* ---------- copy Fiverr handle ---------- */
-  var handleEl = $("#handle"), copyBtn = $("#copy-handle");
-  function selectHandle() {
-    var r = document.createRange(); r.selectNodeContents(handleEl);
-    var sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(r);
-  }
-  function copyHandle() {
-    var done = function (label) { copyBtn.textContent = label; setTimeout(function () { copyBtn.textContent = "Copy Fiverr handle"; }, 2200); };
-    try {
-      navigator.clipboard.writeText(handleEl.textContent).then(function () { done("Copied"); }, function () { selectHandle(); done("Selected, press copy"); });
-    } catch (err) { selectHandle(); done("Selected, press copy"); }
-  }
-  copyBtn.addEventListener("click", copyHandle);
-
   /* ---------- nav: current section ---------- */
   var links = Array.prototype.slice.call(document.querySelectorAll(".nav-links a"));
   if ("IntersectionObserver" in window) {
@@ -979,15 +1142,14 @@ footer { padding-block: 36px 48px; }
   var ITEMS = [
     { g: "Sections", label: "Reel", hint: "showreel", run: function () { go("reel"); } },
     { g: "Sections", label: "Services", hint: "what I do", run: function () { go("services"); } },
+    { g: "Sections", label: "For agencies", hint: "reels and ads", run: function () { go("agencies"); } },
     { g: "Sections", label: "Process", hint: "four steps", run: function () { go("process"); } },
     { g: "Sections", label: "Experience", hint: "work and education", run: function () { go("experience"); } },
     { g: "Sections", label: "Questions", hint: "FAQ", run: function () { go("faq"); } },
     { g: "Sections", label: "Contact", hint: "get in touch", run: function () { go("contact"); } }
   ].concat(CHAPTERS.map(function (c) {
     return { g: "Reel chapters", label: "Play: " + c.name, hint: clock(c.t), run: function () { go("reel"); seek(c.t, true); } };
-  })).concat([
-    { g: "Actions", label: "Copy Fiverr handle", hint: "contact", run: function () { go("contact"); copyHandle(); } }
-  ]);
+  }));
   var shown = [], active = 0, lastFocus = null;
   function renderPalette() {
     var q = palInput.value.trim().toLowerCase();
